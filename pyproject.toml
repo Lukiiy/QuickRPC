@@ -1,0 +1,9 @@
+[project]
+name = "QuickRPC"
+version = "0.1.0"
+description = "Quick RPC with arRPC in Python."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pypresence>=4.6.1",
+]
