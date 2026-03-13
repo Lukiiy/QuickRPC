@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - run: pip install uv
+
+      - run: uv sync --dev
+
+      - name: Build
+        run: uv run pyinstaller main.py --onefile --name quickrpc
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: quickrpc-${{ matrix.os }}
+          path: dist/*
