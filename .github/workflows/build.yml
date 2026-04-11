@@ -20,7 +20,7 @@ jobs:
       - run: uv sync --dev
 
       - name: Build
-        run: uv run pyinstaller main.py --onefile --name quickrpc
+        run: uv run pyinstaller quickrpc.spec
 
       - uses: actions/upload-artifact@v6
         with:
