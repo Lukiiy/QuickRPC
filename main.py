@@ -75,7 +75,10 @@ def main():
             time.sleep(15)
 
     except KeyboardInterrupt:
-        print("\nClearing presence...")
+        try:
+            print("\nClearing presence...")
+        except KeyboardInterrupt:
+            pass
     except Exception as e:
         print("Error while updating presence:", e, file = sys.stderr)
 
