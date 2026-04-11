@@ -1,6 +1,6 @@
 # Quick RPC
 
-Quick RPC with arRPC in Python!  
+Quick Discord RPC with arRPC! Written in Python. 
 Made with [uv](https://github.com/astral-sh/uv).
 
 ### Install
